@@ -1,0 +1,71 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Logs
+*.log
+
+# Documentation
+README.md
+README2.md
+*.md
+
+# Test files
+test_*.py
+*_test.py
+test_*.ipynb
+
+# Data files (avoid uploading large data)
+*.csv
+*.json
+*.pkl
+*.h5
+*.hdf5
+
+# Keep uv files but ignore uv cache
+.uv_cache/
+
+# Model checkpoints (these are large - handle separately)
+data/
