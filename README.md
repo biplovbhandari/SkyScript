@@ -166,7 +166,7 @@ Here `$ROOT_DATA_DIR` is the root directory to the SkyScript dataset (e.g., if `
 This fork adds tools for generating SkyCLIP embeddings from satellite imagery and searching them at scale:
 
 - **[`embeddings/`](embeddings/)** — Embedding generation pipeline: local FAISS search + NAIP tile download via Earth Engine + BigQuery vector search with IVF indexing
-- **[`app/`](app/)** — Streamlit web UI for natural language satellite image search (coming soon)
+- **[`app/`](app/)** — Streamlit web UI for natural language satellite image search with image gallery, interactive map, and CSV export
 - **Deployment** — Dockerfile + Cloud Run deployment scripts (coming soon)
 
 Configuration is managed via `.env` (see [`.env.example`](.env.example) for required variables).
