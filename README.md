@@ -161,6 +161,18 @@ torchrun --nproc_per_node $NUM_GPUS customized_train_and_test.py \
 
 Here `$ROOT_DATA_DIR` is the root directory to the SkyScript dataset (e.g., if `$ROOT_DATA_DIR = '/home/ubuntu/data/SkyScript'`, then the full path to an image file is `/home/ubuntu/data/SkyScript/images2/....jpg`). `$NUM_GPUS` is the number of GPUs used for training (we used 4). `$MODEL_NAME` is a given name (string) of the model. `$TRAINING_CSV_PATH` is the local path to the training CSV file (e.g., `SkyScript_train_top50pct_filtered_by_CLIP_openai.csv`). `$VAL_CSV_PATH` is the local path to the validation CSV file (e.g., `SkyScript_val_5K_filtered_by_CLIP_openai.csv`). `$CAPTION_KEY` is the column name of captions (`title` or `title_multi_objects`). `$BATCH_SIZE` is the batch size (we used 128). `$LR` is the learning rate (we used 3e-9 for CLIP ViT-L14 and 1e-9 for CLIP ViT-B32). `$WD` is the weight decay (we used 1.0). `$MODEL` is the model type (we used `ViT-L-14` or `ViT-B-32`). `$PRETRAINED` is the pretrained checkpoint for model initialization (we used `openai` for `ViT-L-14` and `laion2b_e16` for `ViT-B-32`).
 
+## Extensions
+
+This fork adds tools for generating SkyCLIP embeddings from satellite imagery and searching them at scale:
+
+- **[`embeddings/`](embeddings/)** — Embedding generation pipeline: local FAISS search + NAIP tile download via Earth Engine + BigQuery vector search with IVF indexing
+- **[`app/`](app/)** — Streamlit web UI for natural language satellite image search (coming soon)
+- **Deployment** — Dockerfile + Cloud Run deployment scripts (coming soon)
+
+Configuration is managed via `.env` (see [`.env.example`](.env.example) for required variables).
+
+Key technologies: Google Earth Engine, BigQuery VECTOR_SEARCH, Google Cloud Storage, FAISS, Streamlit.
+
 ## Citing
 
 If you found this dataset useful, please consider citing:

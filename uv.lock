@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.11"
 resolution-markers = [
     "python_full_version >= '3.13'",
@@ -544,7 +544,6 @@ dependencies = [
     { name = "numpy" },
     { name = "packaging" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/e7/9a/e33fc563f007924dd4ec3c5101fe5320298d6c13c158a24a9ed849058569/faiss_cpu-1.11.0.tar.gz", hash = "sha256:44877b896a2b30a61e35ea4970d008e8822545cb340eca4eff223ac7f40a1db9", size = 70218, upload-time = "2025-04-28T07:48:30.459Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/ed/83/8aefc4d07624a868e046cc23ede8a59bebda57f09f72aee2150ef0855a82/faiss_cpu-1.11.0-cp311-cp311-macosx_14_0_arm64.whl", hash = "sha256:a90d1c81d0ecf2157e1d2576c482d734d10760652a5b2fcfa269916611e41f1c", size = 3307997, upload-time = "2025-04-28T07:47:41.905Z" },
     { url = "https://files.pythonhosted.org/packages/2b/64/f97e91d89dc6327e08f619fe387d7d9945bc4be3b0f1ca1e494a41c92ebe/faiss_cpu-1.11.0-cp311-cp311-macosx_14_0_x86_64.whl", hash = "sha256:2c39a388b059fb82cd97fbaa7310c3580ced63bf285be531453bfffbe89ea3dd", size = 7886308, upload-time = "2025-04-28T07:47:44.677Z" },
@@ -2426,6 +2425,15 @@ wheels = [
 ]
 
 [[package]]
+name = "python-dotenv"
+version = "1.2.2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/82/ed/0301aeeac3e5353ef3d94b6ec08bbcabd04a72018415dcb29e588514bba8/python_dotenv-1.2.2.tar.gz", hash = "sha256:2c371a91fbd7ba082c2c1dc1f8bf89ca22564a087c2c287cd9b662adde799cf3", size = 50135, upload-time = "2026-03-01T16:00:26.196Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/0b/d7/1959b9648791274998a9c3526f6d0ec8fd2233e4d4acce81bbae76b44b2a/python_dotenv-1.2.2-py3-none-any.whl", hash = "sha256:1d8214789a24de455a8b8bd8ae6fe3c6b69a5e3d64aa8a8e5d68e694bbcb285a", size = 22101, upload-time = "2026-03-01T16:00:25.09Z" },
+]
+
+[[package]]
 name = "python-json-logger"
 version = "3.3.0"
 source = { registry = "https://pypi.org/simple" }
@@ -2882,6 +2890,7 @@ dependencies = [
     { name = "geemap" },
     { name = "google-cloud-bigquery", extra = ["bqstorage", "pandas"] },
     { name = "google-cloud-storage" },
+    { name = "ipykernel" },
     { name = "ipyleaflet" },
     { name = "ipywidgets" },
     { name = "jupyter-leaflet" },
@@ -2892,6 +2901,7 @@ dependencies = [
     { name = "pandas-gbq" },
     { name = "pyarrow" },
     { name = "pyproj" },
+    { name = "python-dotenv" },
     { name = "rasterio" },
     { name = "regex" },
     { name = "retry" },
@@ -2918,6 +2928,7 @@ requires-dist = [
     { name = "geemap", specifier = ">=0.35.3" },
     { name = "google-cloud-bigquery", extras = ["bqstorage", "pandas"], specifier = ">=3.34.0" },
     { name = "google-cloud-storage", specifier = ">=3.1.1" },
+    { name = "ipykernel", specifier = ">=6.29.5" },
     { name = "ipyleaflet", specifier = ">=0.20.0" },
     { name = "ipywidgets", specifier = ">=8.1.7" },
     { name = "jupyter-leaflet", specifier = ">=0.20.0" },
@@ -2928,6 +2939,7 @@ requires-dist = [
     { name = "pandas-gbq", specifier = ">=0.29.1" },
     { name = "pyarrow", specifier = ">=20.0.0" },
     { name = "pyproj", specifier = ">=3.7.1" },
+    { name = "python-dotenv", specifier = ">=1.2.2" },
     { name = "rasterio", specifier = ">=1.4.3" },
     { name = "regex", specifier = ">=2024.11.6" },
     { name = "retry", specifier = ">=0.9.2" },

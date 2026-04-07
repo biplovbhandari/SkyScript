@@ -1,8 +1,9 @@
 data/
+.ipynb_checkpoints/
 *.pyc
 .DS_Store
 app/
-embeddings/
+embeddings/df_embeddings_naip.csv
 
 # Environments
 .env
