@@ -1,5 +1,7 @@
 # App
 
+![Demo](assets/demo.gif)
+
 Streamlit web UI for natural language NAIP satellite image search using SkyCLIP embeddings and BigQuery vector search.
 
 ## How to Run

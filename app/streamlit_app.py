@@ -19,6 +19,7 @@ from streamlit_folium import st_folium
 import pandas as pd
 from datetime import datetime
 import time
+import types
 
 from src.open_clip.factory import create_model_and_transforms, get_tokenizer
 
@@ -191,7 +192,7 @@ def vector_search_bq(query_vector_list, project_id, dataset_id, table_id,
 
     try:
         query_job = client.query(query)
-        results = list(query_job.result())
+        results = [types.SimpleNamespace(**dict(row)) for row in query_job.result()]
         return results
     except Exception as e:
         st.error(f"Error in BigQuery vector search: {e}")
