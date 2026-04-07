@@ -63,9 +63,16 @@ test_*.ipynb
 *.pkl
 *.h5
 *.hdf5
+*.npz
 
 # Keep uv files but ignore uv cache
 .uv_cache/
 
-# Model checkpoints (these are large - handle separately)
+# Model checkpoints (downloaded at build time)
 data/
+
+# Embeddings notebooks and artifacts
+embeddings/
+
+# Environment (config via Cloud Run env vars)
+.env

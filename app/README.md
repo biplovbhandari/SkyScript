@@ -34,3 +34,39 @@ Copy `../.env.example` to `../.env` and fill in your values. The app uses:
 - `TABLE_ID` — BigQuery table with embeddings
 - `BUCKET_NAME` — GCS bucket with NAIP tile images
 - `CKPT_PATH` — Path to SkyCLIP model checkpoint
+
+## Deployment (Cloud Run)
+
+The app deploys to Google Cloud Run for demo use. `deploy.sh` and `Dockerfile` are at the repo root (Cloud Build context).
+
+**Prerequisites:**
+- GCP project with billing enabled
+- `gcloud` CLI authenticated (`gcloud auth login`)
+- `.env` with `PROJECT_NAME`, `BUCKET_NAME`, `DATASET_ID`, `TABLE_ID` set (all required, no defaults)
+
+**Commands:**
+
+```bash
+# Deploy to Cloud Run (builds image, pushes to Artifact Registry, deploys)
+./deploy.sh deploy
+
+# Check service status and URL
+./deploy.sh status
+
+# Tail logs
+./deploy.sh logs
+
+# Tear down when done (deletes the Cloud Run service, keeps image for fast redeploy)
+./deploy.sh stop
+
+# Full cleanup (deletes service + Artifact Registry images)
+./deploy.sh clean
+```
+
+**Notes:**
+- First request takes 2-3 minutes (model loads into memory on cold start)
+- Scales to zero when idle — no cost when not in use (`min-instances 0`)
+- The 4.6GB model checkpoint is baked into the Docker image at build time
+- Cloud Run config: 32GB RAM, 8 CPUs, concurrency 80, max 3 instances
+- `stop` keeps the image in Artifact Registry (~$0.70/month) so next deploy is fast
+- `clean` removes everything including the image (next deploy requires full rebuild)

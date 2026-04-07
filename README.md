@@ -167,7 +167,7 @@ This fork adds tools for generating SkyCLIP embeddings from satellite imagery an
 
 - **[`embeddings/`](embeddings/)** — Embedding generation pipeline: local FAISS search + NAIP tile download via Earth Engine + BigQuery vector search with IVF indexing
 - **[`app/`](app/)** — Streamlit web UI for natural language satellite image search with image gallery, interactive map, and CSV export
-- **Deployment** — Dockerfile + Cloud Run deployment scripts (coming soon)
+- **Deployment** — Dockerfile + Cloud Run via `deploy.sh` (see [app/README.md](app/README.md#deployment-cloud-run) for details)
 
 Configuration is managed via `.env` (see [`.env.example`](.env.example) for required variables).
 

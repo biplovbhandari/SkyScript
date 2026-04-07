@@ -1,6 +1,5 @@
 data/
 .ipynb_checkpoints/
-embeddings/df_embeddings_naip.csv
 
 *.pyc
 .DS_Store
@@ -15,5 +14,6 @@ ENV/
 env.bak/
 venv.bak/
 
-deploy.sh
-Dockerfile
+# Large artifacts
+embeddings/skyscript_img_embeddings.npz
+embeddings/df_embeddings_naip.csv
